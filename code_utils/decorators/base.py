@@ -22,7 +22,7 @@ def base_decorator_func(func):
     function
         The wrapper function
     """
-    @wraps(function)  # maintain all the info about the function
+    @wraps(func)  # maintain all the info about the function
     def wrapper(*args, **kwargs):
         """Wrapper function:
         This wrapper executes the wrapper function along with whatever functionality
@@ -65,7 +65,7 @@ def base_decorator_func_with_args(func=None, *dec_args, **dec_kwargs):
         """
         return partial(base_decorator_func_with_args, args=dec_args, kwargs=dec_kwargs)
 
-    @wraps(function)  # maintain all the info about the function
+    @wraps(func)  # maintain all the info about the function
     def wrapper(*args, **kwargs):
         """Wrapper function:
         This wrapper executes the wrapper function along with whatever functionality

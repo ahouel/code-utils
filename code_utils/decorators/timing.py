@@ -7,13 +7,13 @@ __all__ = [
     'time_all_class_methods',
 ]
 
-def timer(function):
+def timer(func):
     """Decorates the passed function with a timer.
     It prints the time the function's call took.
 
     Parameters
     ----------
-    function : function
+    func : function
         Function which execution shall be timed.
 
     Returns
@@ -21,12 +21,12 @@ def timer(function):
     function
         The function wrapper with a timer.
     """
-    @wraps(function)  # maintain all the info about the function
-    def with_timer(*func_args, **func_kwargs):
+    @wraps(func)  # maintain all the info about the function
+    def with_timer(*args, **kwargs):
         start = time.time()
-        result = function(*func_args, **func_kwargs)
+        result = func(*args, **kwargs)
         end = time.time()
-        print ('{} took {}'.format(function.__name__, end - start))
+        print ('{} ran in {}'.format(func.__name__, end - start))
         return result
     return with_timer
 
