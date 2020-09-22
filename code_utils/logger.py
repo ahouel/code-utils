@@ -21,3 +21,8 @@ def create_logger(filepath, name='logger', **kwargs):
     # add handler to logger object
     logger.addHandler(fh)
     return logger
+
+if __name__ == "__main__":
+    loggername = os.path.basename(__file__).rsplit('.', 1)[0]
+    loggerfile = os.path.join(os.path.dirname(__file__), 'logs',  loggername + '.log')
+    logger = create_logger(loggerfile, loggername)
