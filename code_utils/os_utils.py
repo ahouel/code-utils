@@ -34,7 +34,7 @@ def list_directory(directory, strings_to_contain=[''], mode='any'):
         strings_to_contain = [strings_to_contain]
     function = _check_funcs[mode]
     return [os.path.join(directory, f) for f in os.listdir(directory)
-            and function(x in f for x in strings_to_contain)]
+            if function(x in f for x in strings_to_contain)]
 
 
 def list_folders(directory, strings_to_contain=[''], mode='any'):
