@@ -49,10 +49,12 @@ def time_all_class_methods(Cls):
             self.oInstance = Cls(*args, **kwargs)
         def __getattribute__(self, s):
             """
-            this is called whenever any attribute of a NewCls object is accessed. This function first tries to
-            get the attribute off NewCls. If it fails, it tries to get the attribute from self.oInstance (an
-            instance of the wrapper class). If it manages to get the attribute from self.oInstance, and
-            the attribute is an instance method then `time_this` is applied.
+            this is called whenever any attribute of a NewCls object is accessed.
+            This function first tries to get the attribute off NewCls.
+            If it fails, it tries to get the attribute from self.oInstance
+            (an instance of the wrapper class).
+            If it manages to get the attribute from self.oInstance, and
+            the attribute is an instance method then `timer` is applied.
             """
             try:
                 x = self.super().__getattribute__(s)
