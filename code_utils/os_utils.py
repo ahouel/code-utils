@@ -1,11 +1,13 @@
 import os
 
 DESKTOP_PATH = os.path.join(os.path.expanduser('~'), 'Desktop')
+DOCUMENTS_PATH = os.path.join(os.path.expanduser('~'), 'Documents')
 
 _check_funcs = {
     'any': any,
-    'all' : all,
+    'all': all,
 }
+
 
 def list_directory(directory, strings_to_contain=[''], mode='any'):
     """Returns all file and folders in the directory which contain the demanded strings.
