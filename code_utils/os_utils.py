@@ -1,5 +1,6 @@
 import os
 
+USER_PATH = os.path.expanduser('~')
 DESKTOP_PATH = os.path.join(os.path.expanduser('~'), 'Desktop')
 DOCUMENTS_PATH = os.path.join(os.path.expanduser('~'), 'Documents')
 
