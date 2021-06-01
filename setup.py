@@ -25,7 +25,7 @@ def load_requirements(
     reqs = []
     for ln in lines:
         if ln.startswith("-r"):
-            requirements += load_requirements(
+            reqs += load_requirements(
                 filename=os.path.join(
                     os.path.dirname(file),
                     ln.split(" ")[1]))
@@ -72,14 +72,14 @@ readme = read_file(os.path.join(PATH_ROOT, "README.md"))
 # To record the files created use:
 #   python setup.py install --record files.txt
 setup(
-    name='utils-florianmf',  # Required
+    name='deemea-python-utils',  # Required
     version='0.0.1',  # Required
     author='Florian Müller-Fouarge',
-    author_email='florian.muellr.fouarge@gmail.com',
+    author_email='florian.muller-fouarge@deemea.com',
     description='A small package with broadly usable utility functions',
     long_description=readme,  # Optional
     long_description_content_type='text/markdown',  # Optional
-    url='https://github.com/FlorianMF/code-utils',  # Optional
+    url='https://github.com/Deemea/python_utils',  # Optional
     license='MIT',
 
     # This field adds keywords for your project which will appear on the
@@ -129,5 +129,7 @@ setup(
         'Programming Language :: Python :: 3',
         'Programming Language :: Python :: 3.7',
         'Programming Language :: Python :: 3.8',
+        'Programming Language :: Python :: 3.9',
+        'Programming Language :: Python :: 3.10',
     ],
 )
